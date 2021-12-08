@@ -1,35 +1,54 @@
 package com.ciclocuatro.primero.Reto1.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Index;
-import javax.persistence.Table;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
+@Document(collection = "users")
 @Data
-@Entity
-@RequiredArgsConstructor
 @NoArgsConstructor
-@Table(name = "user", indexes = @Index(name = "indx_email", columnList = "email", unique = true))
+@AllArgsConstructor
 public class User {
 	
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    @NonNull
+    @Column(name = "identification", nullable = false, length = 50)
+    private String identification;
+    
+    @NonNull
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
+    
+    @NonNull
+    @Column(name = "address", nullable = false, length = 50)
+    private String address;
+    
+    @NonNull
+    @Column(name = "cellPhone", nullable = false, length = 50)
+    private String cellPhone;
+    
     @NonNull
     @Column(name = "email", nullable = false, length = 50)
     private String email;
+    
     @NonNull
     @Column(name = "password", nullable = false, length = 20)
     private String password;
+    
     @NonNull
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;  
+    @Column(name = "zone", nullable = false, length = 20)
+    private String zone;
+    
+    @NonNull
+    @Column(name = "type", nullable = false, length = 20)
+    private String type;
+    
 }

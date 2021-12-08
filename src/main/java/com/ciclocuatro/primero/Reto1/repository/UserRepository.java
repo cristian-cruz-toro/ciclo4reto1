@@ -36,5 +36,13 @@ public class UserRepository {
 	    public Optional<User> autenticarUsuario(String email, String password) {
 	        return repositoryI.findByEmailAndPassword(email, password);
 	    }
+	    
+	    public void update(User user) {
+	    	repositoryI.save(user);
+	    }
+	    
+	    public void delete(User user) {
+	    	repositoryI.delete(user);
+	    }
 
 }
