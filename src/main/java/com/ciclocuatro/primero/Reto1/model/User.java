@@ -1,5 +1,7 @@
 package com.ciclocuatro.primero.Reto1.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 
@@ -26,6 +28,14 @@ public class User {
     @NonNull
     @Column(name = "name", nullable = false, length = 100)
     private String name;
+    
+    @NonNull
+    @Column(name = "birthtDay")
+    private Date birthtDay;
+    
+    @NonNull
+    @Column(name = "monthBirthtDay", nullable = false, length = 100)
+    private String monthBirthtDay;
     
     @NonNull
     @Column(name = "address", nullable = false, length = 50)

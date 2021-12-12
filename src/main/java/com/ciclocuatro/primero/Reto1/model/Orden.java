@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.persistence.Id;
 
+import com.ciclocuatro.primero.Reto1.model.Accessory;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
