@@ -1,6 +1,7 @@
 package com.ciclocuatro.primero.Reto1.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ciclocuatro.primero.Reto1.model.Accessory;
 import com.ciclocuatro.primero.Reto1.model.User;
 import com.ciclocuatro.primero.Reto1.service.UserService;
 
@@ -30,6 +32,12 @@ public class UserController {
     public List<User> getAll() {
         return servicioUsuario.getAll();
     }
+    
+    @GetMapping("/{reference}")
+    public Optional<User>  getUser(@PathVariable("reference") Integer id) {
+        return servicioUsuario.getUser(id);
+    }
+    
     
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
