@@ -44,5 +44,22 @@ public class UserRepository {
 	    public void delete(User user) {
 	    	repositoryI.delete(user);
 	    }
+	    
+	    public boolean emailExist(String email) {
+	        Optional<User> usuario = repositoryI.findByEmail(email);
+	        return !usuario.isEmpty();
+	    }
+
+	    public Optional<User> autenticateUser(String email, String password) {
+	        return repositoryI.findByEmailAndPassword(email, password);
+	    }
+	    
+	     public Optional<User> lastUserId(){
+	        return repositoryI.findTopByOrderByIdDesc();
+	    }
+	     
+	    public List<User> listBirthtDayMonth(String month){
+	        return repositoryI.findByMonthBirthtDay(month);
+	    }
 
 }

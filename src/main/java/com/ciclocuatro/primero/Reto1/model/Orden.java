@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.persistence.Id;
 
-import com.ciclocuatro.primero.Reto1.model.Accessory;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -19,6 +18,7 @@ import lombok.NoArgsConstructor;
 public class Orden {
 	public static String PENDING="pendiente";
 	public static String APROVED="Aprobada";
+	public static String REJECTED= "Rechazada";
 	
 	@Id
 	private Integer id;
