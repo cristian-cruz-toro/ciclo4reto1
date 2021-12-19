@@ -93,5 +93,9 @@ public class UserService {
         }).orElse(false);
         return aBoolean;
     }
+    
+    public List<User> listBirthtDayMonth(String month){
+        return userRepository.listBirthtDayMonth(month);
+    }
 
 }

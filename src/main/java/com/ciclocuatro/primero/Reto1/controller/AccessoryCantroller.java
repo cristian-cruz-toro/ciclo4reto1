@@ -55,4 +55,13 @@ public class AccessoryCantroller {
         return serviceAccesory.delete(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Accessory> productsByPrice(@PathVariable("price") double precio){
+        return serviceAccesory.productsByPrice(precio);
+    }
+    
+    @GetMapping("/description/{description}")
+    public List<Accessory> findByDescriptionLike(@PathVariable("description") String description){
+	return serviceAccesory.findByDescriptionLike(description);
+    }   
 }

@@ -37,4 +37,12 @@ public class AccessoryRepository {
     	interfaceRepository.delete(accesory);
     }
 
+    public List<Accessory> productsByPrice(double precio){
+        return interfaceRepository.findByPriceLessThanEqual(precio);
+    }
+
+    public List<Accessory> findByDescriptionLike(String description){
+	return interfaceRepository.findByDescriptionLike(description);
+    }
+
 }
